@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">TestApplication</string>
+    <string name="profilepic">profilePic</string>
+    <string name="personal_name_title">Name:</string>
+    <string name="personal_email_title">Email:</string>
+    <string name="name_hint">Here is Your Name</string>
+    <string name="here_is_your_email">Here is Your Email</string>
+    <string name="professional_information_header">Professional Information:</string>
+    <string-array name="profession_entries">
+        <item>Barber</item>
+        <item>Egineer</item>
+        <item>Driver</item>
+    </string-array>
+
+    <string-array name="industry_entries">
+        <item>Entertainment</item>
+        <item>Business</item>
+        <item>Beauty</item>
+    </string-array>
+    <string-array name="countries">
+        <item>DE</item>
+        <item>JP</item>
+        <item>UK</item>
+    </string-array>
+</resources>

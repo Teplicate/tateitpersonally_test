@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/Theme.Design.Light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/Theme.Design.Light">
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:paddingEnd="85dp"
+            android:text="My Profile"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/pictureContainer"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:paddingTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/my_toolbar">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/profile_card"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:innerRadius="4dp"
+            android:shape="ring"
+            app:cardCornerRadius="50dp">
+
+            <ImageView
+                android:id="@+id/profile_pic"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@color/transparent"
+                android:contentDescription="@string/profilepic"
+                android:scaleType="centerCrop"
+                android:src="@drawable/iphone360_905667" />
+        </androidx.cardview.widget.CardView>
+
+
+        <Button
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/round_shape_button"
+            android:drawableStart="@drawable/ic_edit" />
+    </FrameLayout>
+
+    <GridLayout
+        android:id="@+id/personalContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:alignmentMode="alignBounds"
+        android:columnCount="2"
+        android:rowCount="2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pictureContainer">
+
+        <TextView
+            style="@style/titles_grid_style_top"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:text="@string/personal_name_title" />
+
+        <TextView
+            style="@style/titles_grid_style_top"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:text="@string/personal_email_title" />
+
+        <EditText
+            android:id="@+id/name_input"
+            style="@style/input_grid_style"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:hint="@string/name_hint"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/email_input"
+            style="@style/input_grid_style"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:hint="@string/here_is_your_email"
+            android:inputType="textEmailAddress" />
+
+    </GridLayout>
+
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/container_frame"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/personalContainer">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="sans-serif"
+            android:padding="18dp"
+            android:text="@string/professional_information_header"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerContainer">
+
+        <GridLayout
+            android:id="@+id/gridContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alignmentMode="alignBounds"
+            android:columnCount="2"
+            android:rowCount="10">
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:text="Profession" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:text="Industry" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:text="Skills" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:text="Profession \n details:" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:text="Phone:" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:text="Instagram" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="6"
+                android:text="Facebook:" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="7"
+                android:text="Website:" />
+
+            <TextView
+                style="@style/titles_grid_style"
+
+                android:layout_height="wrap_content"
+                android:layout_row="8"
+                android:text="Company:" />
+
+            <TextView
+                style="@style/titles_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="9"
+                android:text="Address:" />
+
+            <Spinner
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:entries="@array/profession_entries" />
+
+            <Spinner
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:entries="@array/industry_entries" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:hint="Input Your Skills" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="3"
+                android:hint="Input Your Profession Details" />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:layout_columnWeight="4"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Spinner
+                        android:id="@+id/flagSpinner"
+                        android:layout_width="10dp"
+                        android:entries="@array/countries"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.8" />
+
+                    <EditText
+                        android:id="@+id/phoneNumberInput"
+                        android:padding="10dp"
+                        android:layout_width="0dp"
+                        android:fontFamily="sans-serif"
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="15sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="5"
+                        android:hint="+31(__)__-__-__"
+                        android:inputType="phone"
+                        android:paddingBottom="0dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:paddingTop="0dp"
+                    android:paddingBottom="0dp"
+                    android:text="Preffered contact methods"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:button="@drawable/custom_checkbox" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif"
+                        android:text="Phone"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.7"
+                        android:button="@drawable/custom_checkbox" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:fontFamily="sans-serif"
+                        android:text="Email"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--            <EditText-->
+            <!--                style="@style/input_grid_style"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:hint=""-->
+            <!--                android:layout_row="4" />-->
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="5"
+                android:hint="Input Your Instagram account"
+                android:inputType="text" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="6"
+                android:hint="Input Your Facebook account"
+                android:inputType="text" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="7"
+                android:hint="Input Your Website"
+                android:inputType="text" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="8"
+                android:hint="Input Your Company"
+                android:inputType="text" />
+
+            <EditText
+                style="@style/input_grid_style"
+                android:layout_height="wrap_content"
+                android:layout_row="9"
+                android:hint="Input Your Address"
+                android:inputType="text" />
+
+
+        </GridLayout>
+
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
