@@ -264,6 +264,7 @@
                         android:fontFamily="sans-serif"
                         android:gravity="center"
                         android:textColor="#000000"
+                        android:backgroundTint="#D5D5D5"
                         android:textSize="15sp"
                         android:layout_height="wrap_content"
                         android:layout_weight="5"
